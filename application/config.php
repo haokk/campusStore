@@ -228,4 +228,15 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+
+    //验证码配置
+    'captcha' => [
+        'codeSet' => '0123456789abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',
+        'fontSize' => 18,
+        'useCurve' => true,
+        'imageH' => 40,
+        'imageW' => 150,
+        'length' => 5,
+        'reset' => true,
+    ],
 ];

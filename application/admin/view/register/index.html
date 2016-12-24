@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="/static/admin/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/admin/css/common.css">
+<link rel="stylesheet" href="/static/admin/css/default.css">
+<script language="javascript" src="/static/admin/js/bootstrap.min.js"></script>
+<script language="javascript" src="/static/admin/js/jquery.min.js"></script>
+<script language="javascript" src="/static/admin/js/selectNav.js"></script>
+<script language="javascript" src="/static/admin/js/common.js"></script>
+</head>
+<body>
+<div id="container">
+  <div class="login-cont w1000 mar">
+    <div class="login-top posR">
+      <div class="logo2"></div>
+      <div class="login-top-link posA"><a href="#">返回首页</a> | <a href="#">帮助</a></div>
+    </div>
+    <div class="page-block borA clearfix">
+      <div class="register-left">
+        <h1>用户注册</h1>
+        <form class="form-horizontal mar-t30" method="post" action="register">
+          <div class="form-group">
+            <label for="inputUserName" class="col-sm-2 control-label">用户名：</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" id="inputUserName" placeholder="请输入您的用户名/手机号/电子邮箱">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="setPassword" class="col-sm-2 control-label">登录密码：</label>
+            <div class="col-sm-6">
+              <input type="password" class="form-control" id="setPassword" placeholder="请设置您的登录密码"> 
+            </div> 
+          </div>
+          <div class="form-group">
+            <label for="reSetPassword" class="col-sm-2 control-label">确认密码：</label>
+            <div class="col-sm-6">
+              <input type="password" class="form-control" id="reSetPassword" placeholder="请确认您的登录密码"> 
+            </div> 
+          </div>
+          <div class="form-group">
+            <label for="sex" class="col-sm-2 control-label">性别：</label>
+            <div class="col-xs-2">
+              <label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男</label>
+              <label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 女</label>
+            </div>
+          </div>
+          <div class="form-group mod-select">
+            <label for="address" class="col-xs-2 control-label">收件地址：</label>
+            <div class="col-xs-2">
+              <select name="province" id="province" class="form-control">
+                <option value="">省</option>
+                <option value="">北京</option>
+              </select>
+            </div>
+            <div class="col-xs-2">
+              <select name="city" id="city" class="form-control">
+                <option value="">市</option>
+                <option value="">北京市</option>
+              </select>
+            </div>
+            <div class="col-xs-2">
+              <select name="district" id="district" class="form-control">
+                <option value="">区</option>
+                <option value="">海淀区</option>
+              </select>
+            </div>
+            <div class="col-xs-2">
+              <select name="town" id="town" class="form-control">
+                <option value="">街道</option>
+                <option value="">中关村</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="address" class="col-sm-2 control-label"></label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" id="address" placeholder="地址">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="children" class="col-sm-2 control-label">是否学生：</label>
+            <div class="col-xs-2">
+              <label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 是</label>
+              <label class="radio-inline"><input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 不是</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="school" class="col-sm-2 control-label">就读学校：</label>
+            <div class="col-sm-4">
+              <select name="school" id="school" class="form-control">
+                <option value="">选择学校</option>
+                <option value="">广东省</option>
+              </select>
+            </div>
+            <div class="col-sm-4">
+              <select name="schoolArea" id="schoolArea" class="form-control">
+                <option value="">选择校区</option>
+                <option value="">北京市</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="vaild" class="col-sm-2 control-label">验证码：</label>
+            <div class="col-sm-2">
+              <input type="email" class="form-control" id="vaild" placeholder="验证码">
+            </div>
+          </div>
+          <div class="form-group mar-t30">
+            <label for="inputEmail3" class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+              <div class="mar-t10" style='margin-left:50%;margin-bottom:5%'><a href="#">《橙云网用户使用协议》</a></div>			
+              <button type="submit" class="btn btn-success btn-lg" style='margin-left:50%'>注册</button>
+              <button type="reset" class="btn btn-success btn-lg" style='margin-left:5%'>重置</button>
+            </div>
+          </div>
+          </form>
+      </div>
+    </div>
+    <div class="footer-copy mar-t30">Copyright © 2013-2015 <a href="http://www.jikexueyuan.com/" target="_blank">云印科技</a> All Rights Reversed. 京ICP备11018032号</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="/static/admin/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/admin/css/common.css">
+<link rel="stylesheet" href="/static/admin/css/default.css">
+<script language="javascript" src="/static/admin/js/bootstrap.min.js"></script>
+<script language="javascript" src="/static/admin/js/jquery.min.js"></script>
+<script language="javascript" src="/static/admin/js/selectNav.js"></script>
+<script language="javascript" src="/static/admin/js/common.js"></script>
+</head>
+<body>
+<div id="container">
+  <div class="login-cont w1000 mar">
+    <div class="login-top posR">
+      <div class="logo2"></div>
+      <div class="login-top-link posA"><a href="#">返回首页</a> | <a href="#">帮助</a></div>
+    </div>
+    <div class="page-block borA clearfix">
+      <div class="login-left fl">
+        <h1>用户登录</h1>
+        <form class="form-horizontal mar-t30" method="post" action="{:url('login/login')}">
+          <div class="form-group">
+            <label for="inputEmail" class="col-sm-2 control-label">用户名：</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" id="inputName" placeholder="请输入您的用户名/手机/邮箱" name="name">
+              <div id="tooltip1" class="tooltip-info prompt">
+                    <span class="tooltip-icon-border"></span> 
+                    <span class="tooltip-icon-bg"></span> 
+                    <span class="state"></span> 
+                    <span id="mess1" class="mess"></span>
+                </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword" class="col-sm-2 control-label">登录密码：</label>
+            <div class="col-sm-6">
+              <input type="password" class="form-control" id="inputPassword" placeholder="请输入用户登录密码" name="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputValid" class="col-sm-2 control-label">验证码：</label>
+            <div class="col-sm-2" id="div_captcha">
+              <input type="text" class="form-control" id="inputCaptcha" placeholder="验证码" name="captcha"><img src="{:captcha_src()}" alt="验证码" style="display:block;width:120px;height:40px;margin-left:120px;margin-top:-40px" id="captcha_img" onclick='this.src="{:captcha_src()}?id="+Math.random();' title="点击更换验证码">
+            </div>
+          </div>
+          <div class="form-group mar-t30">
+            <label for="inputEmail3" class="col-sm-2 control-label"></label>
+            <div class="col-sm-5">
+              <button type="submit" class="btn btn-success btn-lg">登录</button>
+              <button type="reset" class="btn btn-success btn-lg" style="margin-left:35%">重置</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="login-right fl mar-l30">        
+        <dl>
+          <dt>没有橙云网帐号？</dt>
+          <dd>
+            <a href="#" class="btn btn-success btn-lg">立即注册</a>
+          </dd>
+        </dl> 	
+        <dl class="mar-t50">
+          <dt>用第三方帐号登录</dt>
+          <dd class="quick-login">
+            <a href="#" class="btns btn-qq"></a>
+            <a href="#" class="btns btn-weibo"></a>
+            <a href="#" class="btns btn-weixin"></a>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="footer-copy mar-t30">Copyright © 2013-2015 <a href="http://www.jikexueyuan.com/" target="_blank">云印科技</a> All Rights Reversed. 京ICP备11018032号</div>
+  </div>
+</div>
+<script type="text/javascript">
+    $('#inputName').blur(function(){
+        var name = $(this).val();
+        $.post('{:url('login/checkName')}', {'name' : name},function(data){
+            if(data == 0) {
+                error['name'] = 0;
+                $('#tooltip1').attr({
+                    'class': 'tooltip-info visible-inline error',
+                });
+            } else {
+                error['name'] = 1;
+                $('#tooltip1').attr({
+                    'class': 'tooltip-info visible-inline prompt',
+                });
+                $('#mess1').html(data);
+            }
+        })
+        return false;
+    });
+</script>
+</body>
+</html>
